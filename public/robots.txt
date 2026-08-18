@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://topknotchtrade.com/sitemap.xml
