@@ -60,10 +60,10 @@ function App() {
           {/* Headline */}
           <div className="gs-reveal flex flex-col gap-3">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading tracking-tight text-white">
-              Coming Soon
+              Where Trades Meet Excellence
             </h1>
             <p className="text-lg sm:text-xl text-amber font-medium font-heading tracking-wide">
-              Where Trades Meet Excellence
+              Certified Industrial Trade Services — Canada-Wide
             </p>
           </div>
 
