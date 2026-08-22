@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
+import { Analytics } from '@vercel/analytics/react'
 import logoFull from './assets/topknotch-full.png'
 
 const services = [
@@ -134,6 +135,7 @@ function App() {
           © {new Date().getFullYear()} TopKnotch Trade Services Inc. — Federally Incorporated under the CBCA
         </p>
       </footer>
+      <Analytics />
     </div>
   )
 }
