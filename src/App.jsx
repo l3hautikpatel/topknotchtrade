@@ -111,7 +111,7 @@ function App() {
               <a
                 href="mailto:info@topknotchtrade.com"
                 id="email-link"
-                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-lg bg-amber text-navy font-semibold text-sm hover:bg-amber-hover transition-colors duration-200 shadow-lg shadow-amber/20"
+                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-lg bg-amber text-navy-dark font-bold text-sm hover:bg-amber-hover transition-colors duration-200 shadow-lg shadow-amber/20"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4" aria-hidden="true">
                   <path d="M3 4a2 2 0 0 0-2 2v1.161l8.441 4.221a1.25 1.25 0 0 0 1.118 0L19 7.162V6a2 2 0 0 0-2-2H3Z" />
@@ -130,7 +130,7 @@ function App() {
 
       {/* ── Footer ── */}
       <footer className="gs-reveal py-6 px-6 text-center border-t border-white/[0.06]">
-        <p className="text-xs text-gray/70">
+        <p className="text-xs text-gray">
           © {new Date().getFullYear()} TopKnotch Trade Services Inc. — Federally Incorporated under the CBCA
         </p>
       </footer>
