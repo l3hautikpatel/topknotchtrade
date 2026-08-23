@@ -4,7 +4,7 @@
 @theme {
   --color-navy: #1A3651;
   --color-navy-light: #243f5c;
-  --color-navy-dark: #0f2133;
+  --color-navy-dark: #0D1F30;
   --color-amber: #F08A36;
   --color-amber-hover: #e27a22;
   --color-gray: #BFC2C8;
@@ -23,37 +23,34 @@
 body {
   margin: 0;
   font-family: var(--font-body);
-  background-color: var(--color-navy);
+  background-color: #0D1F30;
   color: var(--color-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   min-height: 100svh;
+  overflow-x: hidden;
 }
 
-/* ─── Subtle hex background pattern (CSS-only) ─── */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.03;
+/* ─── Technical Blueprint Square Grid Background ─── */
+.bg-technical-grid {
+  background-color: #0D1F30;
   background-image:
-    /* Row 1 */
-    radial-gradient(
-      circle at 50% 50%,
-      var(--color-gray) 0%,
-      transparent 70%
-    );
-  background-size: 60px 52px;
-  mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    black 30%,
-    black 70%,
-    transparent 100%
-  );
+    /* Horizontal & Vertical grid lines making precise squares */
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    /* Subtle amber intersection crosshairs */
+    radial-gradient(circle at 1px 1px, rgba(240, 138, 54, 0.25) 1.5px, transparent 0);
+  background-size: 56px 56px, 56px 56px, 56px 56px;
+  background-position: 0 0, 0 0, -1px -1px;
+}
+
+/* Secondary darker grid for cards & callouts */
+.bg-card-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
 #root {
@@ -62,10 +59,10 @@ body::before {
 }
 
 /* ─── Typography ─── */
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: var(--font-heading);
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.15;
   margin: 0;
 }
 
@@ -79,16 +76,46 @@ a {
   text-decoration: none;
 }
 
-/* ─── Utility: stagger animation targets (hidden by default, revealed by GSAP) ─── */
-.gs-reveal {
-  opacity: 0;
-  transform: translateY(24px);
+/* ─── Eyebrow Section Accents (matches reference screenshots) ─── */
+.eyebrow-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #FBBF24;
+}
+
+.eyebrow-accent::before {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 2px;
+  background-color: #F08A36;
+  border-radius: 9999px;
+}
+
+/* ─── Smooth Page Transition Keyframes ─── */
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-transition {
+  animation: pageFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* ─── Respect reduced motion ─── */
 @media (prefers-reduced-motion: reduce) {
-  .gs-reveal {
-    opacity: 1;
-    transform: none;
+  .page-transition {
+    animation: none;
   }
 }
