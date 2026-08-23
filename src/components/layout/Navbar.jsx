@@ -72,7 +72,7 @@ export default function Navbar() {
               to="/"
               end
               className={({ isActive }) =>
-                `px-3 py-2 text-xs xl:text-sm font-semibold tracking-wider uppercase transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
+                `px-3.5 py-2 text-sm font-semibold tracking-wider uppercase transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
                   isActive
                     ? 'text-amber font-bold'
                     : 'text-white/90 hover:text-amber hover:bg-white/5'
@@ -91,7 +91,7 @@ export default function Navbar() {
               <NavLink
                 to="/services"
                 className={({ isActive }) =>
-                  `px-3 py-2 text-xs xl:text-sm font-semibold tracking-wider uppercase transition-colors rounded-md inline-flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
+                  `px-3.5 py-2 text-sm font-semibold tracking-wider uppercase transition-colors rounded-md inline-flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
                     isActive || location.pathname.startsWith('/services')
                       ? 'text-amber font-bold'
                       : 'text-white/90 hover:text-amber hover:bg-white/5'
@@ -111,7 +111,7 @@ export default function Navbar() {
                 <div className="absolute top-full left-0 w-[580px] pt-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
                   <div className="bg-[#0D1F30] border border-white/15 rounded-xl shadow-2xl p-4 backdrop-blur-xl">
                     <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
-                      <span className="text-xs font-bold uppercase tracking-widest text-amber">
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#FBBF24]">
                         All 9 Core Service Lines
                       </span>
                       <Link
@@ -155,7 +155,7 @@ export default function Navbar() {
             <NavLink
               to="/industries"
               className={({ isActive }) =>
-                `px-3 py-2 text-xs xl:text-sm font-semibold tracking-wider uppercase transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
+                `px-3.5 py-2 text-sm font-semibold tracking-wider uppercase transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
                   isActive
                     ? 'text-amber font-bold'
                     : 'text-white/90 hover:text-amber hover:bg-white/5'
@@ -168,7 +168,7 @@ export default function Navbar() {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                `px-3 py-2 text-xs xl:text-sm font-semibold tracking-wider uppercase transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
+                `px-3.5 py-2 text-sm font-semibold tracking-wider uppercase transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
                   isActive
                     ? 'text-amber font-bold'
                     : 'text-white/90 hover:text-amber hover:bg-white/5'
@@ -181,7 +181,7 @@ export default function Navbar() {
             <NavLink
               to="/careers"
               className={({ isActive }) =>
-                `px-3 py-2 text-xs xl:text-sm font-semibold tracking-wider uppercase transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
+                `px-3.5 py-2 text-sm font-semibold tracking-wider uppercase transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
                   isActive
                     ? 'text-amber font-bold'
                     : 'text-white/90 hover:text-amber hover:bg-white/5'
@@ -194,7 +194,7 @@ export default function Navbar() {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                `px-3 py-2 text-xs xl:text-sm font-semibold tracking-wider uppercase transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
+                `px-3.5 py-2 text-sm font-semibold tracking-wider uppercase transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
                   isActive
                     ? 'text-amber font-bold'
                     : 'text-white/90 hover:text-amber hover:bg-white/5'

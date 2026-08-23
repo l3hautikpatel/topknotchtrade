@@ -39,7 +39,7 @@ export default function ContactForm() {
     service: '',
     industry: '',
     province: 'Ontario',
-    timeline: 'Within a week',
+    timeline: 'Within 1 Week',
     message: '',
     honeypot: '' // hidden anti-spam field
   })
@@ -124,17 +124,17 @@ ${formData.message || 'No additional details provided.'}
 
   if (submitted) {
     return (
-      <div className="bg-[#0D1F30] border border-amber/40 rounded-2xl p-8 sm:p-10 text-center flex flex-col items-center gap-4 shadow-2xl">
+      <div className="bg-[#0D1F30] border border-amber/40 rounded-2xl p-8 sm:p-12 text-center flex flex-col items-center gap-4 shadow-2xl">
         <div className="w-16 h-16 rounded-full bg-amber/20 flex items-center justify-center text-amber">
           <CheckCircle2 className="w-9 h-9" />
         </div>
-        <h3 className="text-2xl font-bold font-heading text-white">
+        <h3 className="text-2xl sm:text-3xl font-bold font-heading text-white">
           Message Received Successfully!
         </h3>
-        <p className="text-sm text-gray-light leading-relaxed max-w-md">
+        <p className="text-base text-gray-light leading-relaxed max-w-md">
           Thank you for reaching out to TopKnotch Trade Services. A senior project manager or estimator will review your requirements and get back to you within <strong>1 business day</strong>.
         </p>
-        <div className="p-3 bg-white/5 rounded-lg border border-white/10 text-xs text-amber font-medium">
+        <div className="p-4 bg-white/5 rounded-xl border border-white/10 text-sm text-[#FBBF24] font-medium">
           Need immediate emergency breakdown dispatch? Call (226) 759-2210.
         </div>
         <button
@@ -148,12 +148,12 @@ ${formData.message || 'No additional details provided.'}
               service: '',
               industry: '',
               province: 'Ontario',
-              timeline: 'Within a week',
+              timeline: 'Within 1 Week',
               message: '',
               honeypot: ''
             })
           }}
-          className="mt-2 text-xs text-white/70 hover:text-white underline"
+          className="mt-3 text-sm text-white/80 hover:text-white underline"
         >
           Send another inquiry
         </button>
@@ -164,16 +164,16 @@ ${formData.message || 'No additional details provided.'}
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-[#0D1F30] border border-white/15 rounded-2xl p-6 sm:p-8 shadow-2xl flex flex-col gap-6"
+      className="bg-[#0D1F30] border border-white/15 rounded-2xl p-7 sm:p-9 shadow-2xl flex flex-col gap-6"
     >
       {/* ── Form Type Toggle ── */}
-      <div className="flex rounded-lg p-1 bg-white/5 border border-white/10">
+      <div className="flex rounded-xl p-1 bg-white/5 border border-white/10">
         <button
           type="button"
           onClick={() => setFormType('quote')}
-          className={`flex-1 py-2.5 text-xs font-bold uppercase tracking-wider rounded-md transition-all ${
+          className={`flex-1 py-3 text-xs sm:text-sm font-extrabold uppercase tracking-wider rounded-lg transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber ${
             formType === 'quote'
-              ? 'bg-amber text-navy shadow-md'
+              ? 'bg-amber text-[#0D1F30] shadow-md'
               : 'text-white/70 hover:text-white'
           }`}
         >
@@ -182,9 +182,9 @@ ${formData.message || 'No additional details provided.'}
         <button
           type="button"
           onClick={() => setFormType('inquiry')}
-          className={`flex-1 py-2.5 text-xs font-bold uppercase tracking-wider rounded-md transition-all ${
+          className={`flex-1 py-3 text-xs sm:text-sm font-extrabold uppercase tracking-wider rounded-lg transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber ${
             formType === 'inquiry'
-              ? 'bg-amber text-navy shadow-md'
+              ? 'bg-amber text-[#0D1F30] shadow-md'
               : 'text-white/70 hover:text-white'
           }`}
         >
@@ -193,8 +193,8 @@ ${formData.message || 'No additional details provided.'}
       </div>
 
       {error && (
-        <div className="flex items-center gap-2 p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-200 text-xs">
-          <AlertCircle className="w-4 h-4 shrink-0" />
+        <div className="flex items-center gap-2 p-3.5 rounded-xl bg-red-500/10 border border-red-500/30 text-red-200 text-sm">
+          <AlertCircle className="w-5 h-5 shrink-0" />
           <span>{error}</span>
         </div>
       )}
@@ -214,10 +214,10 @@ ${formData.message || 'No additional details provided.'}
       </div>
 
       {/* ── Inputs Grid ── */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {/* Name */}
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="name" className="text-xs font-semibold text-white/90">
+          <label htmlFor="name" className="text-sm font-semibold text-white/95">
             Full Name <span className="text-amber">*</span>
           </label>
           <input
@@ -228,13 +228,13 @@ ${formData.message || 'No additional details provided.'}
             placeholder="e.g., Sarah Jenkins"
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-3.5 py-2.5 rounded-lg bg-white/5 border border-white/15 text-white text-sm focus:border-amber focus:ring-1 focus:ring-amber focus:outline-none transition-colors"
+            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white text-base sm:text-sm focus:border-amber focus:ring-1 focus:ring-amber focus:outline-none transition-colors"
           />
         </div>
 
         {/* Email */}
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="email" className="text-xs font-semibold text-white/90">
+          <label htmlFor="email" className="text-sm font-semibold text-white/95">
             Email Address <span className="text-amber">*</span>
           </label>
           <input
@@ -245,13 +245,13 @@ ${formData.message || 'No additional details provided.'}
             placeholder="s.jenkins@company.ca"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-3.5 py-2.5 rounded-lg bg-white/5 border border-white/15 text-white text-sm focus:border-amber focus:ring-1 focus:ring-amber focus:outline-none transition-colors"
+            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white text-base sm:text-sm focus:border-amber focus:ring-1 focus:ring-amber focus:outline-none transition-colors"
           />
         </div>
 
         {/* Phone */}
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="phone" className="text-xs font-semibold text-white/90">
+          <label htmlFor="phone" className="text-sm font-semibold text-white/95">
             Phone Number
           </label>
           <input
@@ -261,13 +261,13 @@ ${formData.message || 'No additional details provided.'}
             placeholder="(416) 555-0199"
             value={formData.phone}
             onChange={handleChange}
-            className="w-full px-3.5 py-2.5 rounded-lg bg-white/5 border border-white/15 text-white text-sm focus:border-amber focus:ring-1 focus:ring-amber focus:outline-none transition-colors"
+            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white text-base sm:text-sm focus:border-amber focus:ring-1 focus:ring-amber focus:outline-none transition-colors"
           />
         </div>
 
         {/* Company */}
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="company" className="text-xs font-semibold text-white/90">
+          <label htmlFor="company" className="text-sm font-semibold text-white/95">
             Company / Facility Name
           </label>
           <input
@@ -277,13 +277,13 @@ ${formData.message || 'No additional details provided.'}
             placeholder="e.g., Apex Logistics Hub"
             value={formData.company}
             onChange={handleChange}
-            className="w-full px-3.5 py-2.5 rounded-lg bg-white/5 border border-white/15 text-white text-sm focus:border-amber focus:ring-1 focus:ring-amber focus:outline-none transition-colors"
+            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white text-base sm:text-sm focus:border-amber focus:ring-1 focus:ring-amber focus:outline-none transition-colors"
           />
         </div>
 
         {/* Service Required */}
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="service" className="text-xs font-semibold text-white/90">
+          <label htmlFor="service" className="text-sm font-semibold text-white/95">
             Primary Service Required
           </label>
           <select
@@ -291,7 +291,7 @@ ${formData.message || 'No additional details provided.'}
             name="service"
             value={formData.service}
             onChange={handleChange}
-            className="w-full px-3.5 py-2.5 rounded-lg bg-[#0f2438] border border-white/15 text-white text-sm focus:border-amber focus:ring-1 focus:ring-amber focus:outline-none transition-colors"
+            className="w-full px-4 py-3 rounded-xl bg-[#0f2438] border border-white/15 text-white text-base sm:text-sm focus:border-amber focus:ring-1 focus:ring-amber focus:outline-none transition-colors"
           >
             <option value="">Select a service...</option>
             {services.map((s) => (
@@ -306,7 +306,7 @@ ${formData.message || 'No additional details provided.'}
 
         {/* Industry */}
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="industry" className="text-xs font-semibold text-white/90">
+          <label htmlFor="industry" className="text-sm font-semibold text-white/95">
             Facility / Industry Type
           </label>
           <select
@@ -314,7 +314,7 @@ ${formData.message || 'No additional details provided.'}
             name="industry"
             value={formData.industry}
             onChange={handleChange}
-            className="w-full px-3.5 py-2.5 rounded-lg bg-[#0f2438] border border-white/15 text-white text-sm focus:border-amber focus:ring-1 focus:ring-amber focus:outline-none transition-colors"
+            className="w-full px-4 py-3 rounded-xl bg-[#0f2438] border border-white/15 text-white text-base sm:text-sm focus:border-amber focus:ring-1 focus:ring-amber focus:outline-none transition-colors"
           >
             <option value="">Select an industry...</option>
             {industries.map((ind) => (
@@ -328,7 +328,7 @@ ${formData.message || 'No additional details provided.'}
 
         {/* Province / Location */}
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="province" className="text-xs font-semibold text-white/90">
+          <label htmlFor="province" className="text-sm font-semibold text-white/95">
             Job Site Province / Territory
           </label>
           <select
@@ -336,7 +336,7 @@ ${formData.message || 'No additional details provided.'}
             name="province"
             value={formData.province}
             onChange={handleChange}
-            className="w-full px-3.5 py-2.5 rounded-lg bg-[#0f2438] border border-white/15 text-white text-sm focus:border-amber focus:ring-1 focus:ring-amber focus:outline-none transition-colors"
+            className="w-full px-4 py-3 rounded-xl bg-[#0f2438] border border-white/15 text-white text-base sm:text-sm focus:border-amber focus:ring-1 focus:ring-amber focus:outline-none transition-colors"
           >
             {provinces.map((prov) => (
               <option key={prov} value={prov}>
@@ -349,7 +349,7 @@ ${formData.message || 'No additional details provided.'}
         {/* Timeline */}
         {formType === 'quote' && (
           <div className="flex flex-col gap-1.5">
-            <label htmlFor="timeline" className="text-xs font-semibold text-white/90">
+            <label htmlFor="timeline" className="text-sm font-semibold text-white/95">
               Target Project Timeline
             </label>
             <select
@@ -357,7 +357,7 @@ ${formData.message || 'No additional details provided.'}
               name="timeline"
               value={formData.timeline}
               onChange={handleChange}
-              className="w-full px-3.5 py-2.5 rounded-lg bg-[#0f2438] border border-white/15 text-white text-sm focus:border-amber focus:ring-1 focus:ring-amber focus:outline-none transition-colors"
+              className="w-full px-4 py-3 rounded-xl bg-[#0f2438] border border-white/15 text-white text-base sm:text-sm focus:border-amber focus:ring-1 focus:ring-amber focus:outline-none transition-colors"
             >
               <option value="Emergency / Immediate (24-48 hrs)">Emergency / Immediate (24-48 hrs)</option>
               <option value="Within 1 Week">Within 1 Week</option>
@@ -371,7 +371,7 @@ ${formData.message || 'No additional details provided.'}
 
       {/* Message / Scope */}
       <div className="flex flex-col gap-1.5">
-        <label htmlFor="message" className="text-xs font-semibold text-white/90">
+        <label htmlFor="message" className="text-sm font-semibold text-white/95">
           {formType === 'quote' ? 'Project Scope & Equipment Details' : 'How can we help?'}
         </label>
         <textarea
@@ -385,7 +385,7 @@ ${formData.message || 'No additional details provided.'}
           }
           value={formData.message}
           onChange={handleChange}
-          className="w-full px-3.5 py-2.5 rounded-lg bg-white/5 border border-white/15 text-white text-sm focus:border-amber focus:ring-1 focus:ring-amber focus:outline-none transition-colors resize-y"
+          className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white text-base sm:text-sm focus:border-amber focus:ring-1 focus:ring-amber focus:outline-none transition-colors resize-y"
         />
       </div>
 
@@ -393,22 +393,22 @@ ${formData.message || 'No additional details provided.'}
       <button
         type="submit"
         disabled={loading}
-        className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-amber text-navy font-bold text-sm uppercase tracking-wider hover:bg-amber-hover hover:scale-[1.01] active:scale-[0.99] transition-all shadow-lg shadow-amber/20 disabled:opacity-50"
+        className="w-full inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-amber text-[#0D1F30] font-extrabold text-sm sm:text-base uppercase tracking-wider hover:bg-amber-hover hover:scale-[1.01] active:scale-[0.99] transition-all shadow-lg shadow-amber/25 disabled:opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
       >
         {loading ? (
           <>
-            <Loader2 className="w-4 h-4 animate-spin" />
+            <Loader2 className="w-5 h-5 animate-spin text-[#0D1F30]" />
             <span>Processing Request...</span>
           </>
         ) : (
           <>
-            <Send className="w-4 h-4" />
+            <Send className="w-5 h-5 text-[#0D1F30]" />
             <span>{formType === 'quote' ? 'Submit Quote Request' : 'Send Message'}</span>
           </>
         )}
       </button>
 
-      <div className="text-[11px] text-gray text-center">
+      <div className="text-xs text-gray-light text-center">
         🔒 All inquiries are confidential. We never share your data. Federally Incorporated under the CBCA.
       </div>
     </form>

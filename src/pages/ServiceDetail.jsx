@@ -32,27 +32,27 @@ export default function ServiceDetail() {
       <section className="pt-32 sm:pt-36 pb-16 sm:pb-20 bg-gradient-to-b from-[#0D1F30] via-[#11273C] to-[#1A3651] border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-xs text-gray mb-6">
+          <nav className="flex items-center gap-2 text-xs sm:text-sm text-gray-light mb-6">
             <Link to="/" className="hover:text-amber transition-colors">Home</Link>
             <span>/</span>
             <Link to="/services" className="hover:text-amber transition-colors">Services</Link>
             <span>/</span>
-            <span className="text-amber font-semibold">{service.name}</span>
+            <span className="text-[#FBBF24] font-semibold">{service.name}</span>
           </nav>
 
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
             <div className="flex items-start gap-4">
-              <div className="w-14 h-14 rounded-2xl bg-amber text-[#0D1F30] flex items-center justify-center shrink-0 shadow-lg shadow-amber/20">
-                <IconComponent className="w-7 h-7 text-[#0D1F30]" />
+              <div className="w-16 h-16 rounded-2xl bg-amber text-[#0D1F30] flex items-center justify-center shrink-0 shadow-lg shadow-amber/20">
+                <IconComponent className="w-8 h-8 text-[#0D1F30]" />
               </div>
               <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-[#FBBF24] block mb-1">
+                <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#FBBF24] block mb-1">
                   Certified Industrial Trade Scope
                 </span>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-black font-heading tracking-tight text-white">
                   {service.name}
                 </h1>
-                <p className="text-base text-gray-light mt-1">
+                <p className="text-base sm:text-lg text-gray-light mt-1">
                   {service.tagline}
                 </p>
               </div>
@@ -61,7 +61,7 @@ export default function ServiceDetail() {
             <div className="flex items-center gap-3 shrink-0">
               <Link
                 to={`/contact?type=quote&service=${encodeURIComponent(service.name)}`}
-                className="px-6 py-3 rounded-lg bg-amber text-[#0D1F30] font-extrabold text-xs uppercase tracking-wider hover:bg-amber-hover transition-all shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
+                className="px-7 py-3.5 rounded-xl bg-amber text-[#0D1F30] font-extrabold text-sm uppercase tracking-wider hover:bg-amber-hover transition-all shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
               >
                 Request Quote
               </Link>
@@ -71,30 +71,30 @@ export default function ServiceDetail() {
       </section>
 
       {/* ── Main Detail Content ── */}
-      <section className="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* ── Left Content (8 cols) ── */}
           <div className="lg:col-span-8 flex flex-col gap-10">
             {/* Overview */}
             <div className="flex flex-col gap-4">
-              <h2 className="text-2xl font-bold font-heading text-white">
+              <h2 className="text-2xl sm:text-3xl font-bold font-heading text-white">
                 Service Scope &amp; Overview
               </h2>
-              <p className="text-base text-gray-light leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-light leading-relaxed">
                 {service.fullDesc}
               </p>
             </div>
 
             {/* Scope of Capabilities */}
-            <div className="bg-[#0D1F30] border border-white/10 rounded-2xl p-6 sm:p-8 flex flex-col gap-6">
-              <h3 className="text-xl font-bold font-heading text-white">
+            <div className="bg-[#0D1F30] border border-white/10 rounded-2xl p-7 sm:p-8 flex flex-col gap-6">
+              <h3 className="text-xl sm:text-2xl font-bold font-heading text-white">
                 What Is Included Under This Trade
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {service.bullets.map((bullet, idx) => (
                   <div key={idx} className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-amber shrink-0 mt-0.5" />
-                    <span className="text-xs sm:text-sm text-gray-light leading-relaxed">{bullet}</span>
+                    <span className="text-sm sm:text-base text-gray-light leading-relaxed">{bullet}</span>
                   </div>
                 ))}
               </div>
@@ -102,16 +102,16 @@ export default function ServiceDetail() {
 
             {/* Machinery & Equipment Handled */}
             <div className="flex flex-col gap-4">
-              <h3 className="text-xl font-bold font-heading text-white">
+              <h3 className="text-xl sm:text-2xl font-bold font-heading text-white">
                 Equipment &amp; Systems We Work On
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {service.equipment.map((eq, idx) => (
                   <div
                     key={idx}
-                    className="p-4 rounded-xl bg-white/[0.03] border border-white/10 text-xs sm:text-sm text-white/90 font-medium flex items-center gap-3"
+                    className="p-4 rounded-xl bg-white/[0.03] border border-white/10 text-sm sm:text-base text-white font-medium flex items-center gap-3"
                   >
-                    <div className="w-2 h-2 rounded-full bg-amber shrink-0" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-amber shrink-0" />
                     <span>{eq}</span>
                   </div>
                 ))}
@@ -122,27 +122,27 @@ export default function ServiceDetail() {
           {/* ── Right Sidebar (4 cols) ── */}
           <div className="lg:col-span-4 flex flex-col gap-6">
             {/* Direct Quote Card */}
-            <div className="bg-[#0D1F30] border border-amber/30 rounded-2xl p-6 shadow-xl flex flex-col gap-4">
+            <div className="bg-[#0D1F30] border border-amber/30 rounded-2xl p-7 shadow-xl flex flex-col gap-4">
               <span className="text-xs font-bold uppercase tracking-widest text-[#FBBF24]">
                 Book This Service
               </span>
-              <h3 className="text-lg font-bold font-heading text-white">
+              <h3 className="text-xl font-bold font-heading text-white">
                 Need {service.shortName} Support?
               </h3>
-              <p className="text-xs text-gray-light leading-relaxed">
+              <p className="text-sm text-gray-light leading-relaxed">
                 Contact our estimation team for itemized proposals or 24/7 emergency dispatch.
               </p>
               <Link
                 to={`/contact?type=quote&service=${encodeURIComponent(service.name)}`}
-                className="w-full text-center py-3 rounded-lg bg-amber text-[#0D1F30] font-extrabold text-xs uppercase tracking-wider hover:bg-amber-hover transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
+                className="w-full text-center py-3.5 rounded-xl bg-amber text-[#0D1F30] font-extrabold text-sm uppercase tracking-wider hover:bg-amber-hover transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
               >
                 Request Itemized Quote
               </Link>
               <a
                 href="tel:+12267592210"
-                className="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg border border-white/20 text-white font-semibold text-xs hover:bg-white/5 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
+                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-white/20 text-white font-semibold text-sm hover:bg-white/5 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
               >
-                <Phone className="w-3.5 h-3.5 text-amber" />
+                <Phone className="w-4 h-4 text-amber" />
                 <span>(226) 759-2210</span>
               </a>
             </div>
@@ -153,7 +153,7 @@ export default function ServiceDetail() {
                 <ShieldCheck className="w-4 h-4" />
                 <span>The TopKnotch Guarantee</span>
               </div>
-              <p className="text-xs text-gray leading-relaxed">
+              <p className="text-xs sm:text-sm text-gray-light leading-relaxed">
                 Every technician assigned is fully certified, safety-trained, and adheres to strict OEM &amp; engineering specifications.
               </p>
             </div>
@@ -163,15 +163,15 @@ export default function ServiceDetail() {
               <h4 className="text-xs font-bold uppercase tracking-widest text-[#FBBF24]">
                 Related Trade Services
               </h4>
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2.5">
                 {relatedServices.map((rel) => (
                   <Link
                     key={rel.id}
                     to={`/services/${rel.slug}`}
-                    className="p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors flex items-center justify-between text-xs text-white group focus:outline-none focus-visible:ring-1 focus-visible:ring-amber"
+                    className="p-3.5 rounded-xl bg-white/5 hover:bg-white/10 transition-colors flex items-center justify-between text-sm text-white group focus:outline-none focus-visible:ring-1 focus-visible:ring-amber"
                   >
                     <span className="font-semibold group-hover:text-amber transition-colors">{rel.name}</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-amber group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 text-amber group-hover:translate-x-1 transition-transform" />
                   </Link>
                 ))}
               </div>
