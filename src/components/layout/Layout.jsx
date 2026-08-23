@@ -12,9 +12,9 @@ export default function Layout() {
   }, [pathname])
 
   return (
-    <div className="min-h-svh flex flex-col bg-[#1A3651] text-white">
+    <div className="min-h-svh flex flex-col bg-[#0D1F30] bg-technical-grid text-white relative selection:bg-amber selection:text-[#0D1F30]">
       <Navbar />
-      <main className="flex-1">
+      <main key={pathname} className="flex-1 page-transition">
         <Outlet />
       </main>
       <Footer />

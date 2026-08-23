@@ -1,17 +1,17 @@
 import { Link } from 'react-router'
 import { Home, Wrench, PhoneCall } from 'lucide-react'
-import logoFull from '../assets/topknotch-full.png'
+import logoDark from '../assets/Logos/Dark-logo-text.png'
 
 export default function NotFound() {
   return (
-    <div className="min-h-[80vh] flex items-center justify-center px-4 sm:px-6 py-24 sm:py-32">
+    <div className="min-h-[85vh] flex items-center justify-center px-4 sm:px-6 pt-32 sm:pt-36 pb-20 bg-gradient-to-b from-[#0D1F30] via-[#11273C] to-[#1A3651]">
       <div className="max-w-xl w-full text-center flex flex-col items-center gap-6 sm:gap-8">
         {/* Brand Logo */}
-        <div className="bg-white rounded-2xl px-6 py-3.5 shadow-xl inline-block">
+        <div className="py-2 inline-block">
           <img
-            src={logoFull}
+            src={logoDark}
             alt="TopKnotch Trade Services"
-            className="h-10 sm:h-12 w-auto object-contain"
+            className="h-12 sm:h-14 w-auto object-contain drop-shadow-xl"
           />
         </div>
 
@@ -35,15 +35,15 @@ export default function NotFound() {
         <div className="flex flex-col sm:flex-row items-center gap-3.5 w-full justify-center pt-2">
           <Link
             to="/"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-lg bg-amber text-navy font-bold text-sm uppercase tracking-wider hover:bg-amber-hover hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg shadow-amber/20"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-lg bg-amber text-[#0D1F30] font-extrabold text-sm uppercase tracking-wider hover:bg-amber-hover hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg shadow-amber/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
           >
-            <Home className="w-4 h-4" />
+            <Home className="w-4 h-4 text-[#0D1F30]" />
             <span>Back to Home</span>
           </Link>
 
           <Link
             to="/services"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-lg border border-white/20 text-white font-semibold text-sm hover:bg-white/5 hover:border-white/40 transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-lg border border-white/25 text-white font-semibold text-sm hover:bg-white/5 hover:border-white/40 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
           >
             <Wrench className="w-4 h-4 text-amber" />
             <span>Explore Services</span>
@@ -55,7 +55,7 @@ export default function NotFound() {
           <span>Need immediate assistance?</span>
           <a
             href="tel:+12267592210"
-            className="text-amber font-semibold hover:underline inline-flex items-center gap-1"
+            className="text-amber font-semibold hover:underline inline-flex items-center gap-1 focus:outline-none focus-visible:ring-1 focus-visible:ring-amber"
           >
             <PhoneCall className="w-3 h-3" />
             <span>Call (226) 759-2210</span>
