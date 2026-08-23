@@ -2,7 +2,7 @@ import { Link } from 'react-router'
 import { Phone, ArrowRight, ShieldAlert } from 'lucide-react'
 
 export default function CTASection({
-  title = "Ready to Keep Your Operations Running?",
+  title = <>Ready to Keep Your Operations <span className="text-amber">Running?</span></>,
   subtitle = "Get a fast, transparent quote from Canada's certified industrial trade services team — on-call 24/7 across the country.",
   primaryBtnText = "Request a Free Quote",
   primaryBtnLink = "/contact?type=quote",
@@ -10,13 +10,13 @@ export default function CTASection({
   secondaryBtnLink = "tel:+12267592210"
 }) {
   return (
-    <section className="relative py-20 sm:py-24 lg:py-28 bg-gradient-to-b from-[#1A3651] via-[#0D1F30] to-[#0D1F30] border-t border-white/10 overflow-hidden">
+    <section className="relative py-20 sm:py-24 lg:py-28 bg-gradient-to-b from-[#1A3651]/80 via-[#0D1F30] to-[#0D1F30] border-t border-white/10 overflow-hidden bg-technical-grid">
       {/* Background Accent glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber/10 blur-[120px] pointer-events-none rounded-full" />
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center gap-6 sm:gap-8">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber/15 border border-amber/40 text-[#FBBF24] text-xs sm:text-sm font-extrabold uppercase tracking-widest">
+        <div className="eyebrow-accent">
           <ShieldAlert className="w-4 h-4" />
           <span>Coast-to-Coast Industrial Reliability</span>
         </div>

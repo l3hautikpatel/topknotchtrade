@@ -1,7 +1,9 @@
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router'
 import { ArrowRight, Wrench, Cog, Flame, Anchor, Zap, ShieldCheck, AlertTriangle, ClipboardCheck, Calendar } from 'lucide-react'
 import { services } from '../data/services'
 import CTASection from '../components/ui/CTASection'
+import { animateHeroEntrance, animateScrollReveal, ScrollTrigger } from '../utils/animations'
 
 const iconMap = {
   Wrench,
@@ -16,34 +18,53 @@ const iconMap = {
 }
 
 export default function Services() {
+  const heroRef = useRef(null)
+  const gridRef = useRef(null)
+
+  useEffect(() => {
+    if (heroRef.current) {
+      animateHeroEntrance(heroRef.current.querySelectorAll('.hero-animate'))
+    }
+    if (gridRef.current) {
+      animateScrollReveal(gridRef.current, gridRef.current.querySelectorAll('.service-grid-card'))
+    }
+
+    return () => {
+      ScrollTrigger.getAll().forEach((t) => t.kill())
+    }
+  }, [])
+
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-technical-grid">
       {/* ── Page Hero (Starts at top:0 behind navbar) ── */}
-      <section className="pt-32 sm:pt-36 pb-16 sm:pb-20 bg-gradient-to-b from-[#0D1F30] via-[#11273C] to-[#1A3651] border-b border-white/10">
+      <section
+        ref={heroRef}
+        className="pt-32 sm:pt-36 pb-16 sm:pb-20 bg-gradient-to-b from-[#0D1F30] via-[#11273C]/90 to-[#0D1F30] border-b border-white/10 relative"
+      >
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center gap-4">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber/15 border border-amber/40 text-[#FBBF24] text-xs sm:text-sm font-extrabold uppercase tracking-widest">
-            <span>9 Specialized Industrial Trade Lines</span>
+          <div className="hero-animate eyebrow-accent">
+            9 Specialized Industrial Trade Lines
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black font-heading tracking-tight text-white">
-            Industrial Trade Services
+          <h1 className="hero-animate text-4xl sm:text-5xl md:text-6xl font-black font-heading tracking-tight text-white">
+            Industrial <span className="text-amber">Trade Services</span>
           </h1>
 
-          <p className="text-base sm:text-xl text-gray-light leading-relaxed max-w-3xl">
+          <p className="hero-animate text-base sm:text-xl text-gray-light leading-relaxed max-w-3xl">
             From single-technician emergency service calls to turnkey multi-trade shutdown crews of 30+ specialists — TopKnotch delivers certified expertise for every phase of industrial equipment life.
           </p>
         </div>
       </section>
 
       {/* ── Services Grid ── */}
-      <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section ref={gridRef} className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((service, index) => {
             const IconComponent = iconMap[service.icon] || Wrench
             return (
               <div
                 key={service.id}
-                className="bg-[#0D1F30] border border-white/10 hover:border-amber/50 rounded-2xl p-7 sm:p-8 shadow-xl hover:shadow-2xl hover:shadow-amber/10 transition-all duration-300 flex flex-col justify-between group"
+                className="service-grid-card bg-[#0D1F30] border border-white/10 hover:border-amber/50 rounded-2xl p-7 sm:p-8 shadow-xl hover:shadow-2xl hover:shadow-amber/10 transition-all duration-300 flex flex-col justify-between group bg-card-grid"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">

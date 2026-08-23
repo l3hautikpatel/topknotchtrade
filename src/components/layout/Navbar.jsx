@@ -47,8 +47,8 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#1A3651]/95 backdrop-blur-md shadow-lg shadow-black/20 border-b border-white/10 py-3'
-          : 'bg-gradient-to-b from-[#0D1F30]/95 via-[#0D1F30]/60 to-transparent py-4 sm:py-5'
+          ? 'bg-[#0D1F30]/95 backdrop-blur-md shadow-lg shadow-black/30 border-b border-white/10 py-3'
+          : 'bg-gradient-to-b from-[#0D1F30]/95 via-[#0D1F30]/70 to-transparent py-4 sm:py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,18 +68,26 @@ export default function Navbar() {
 
           {/* ── Desktop Navigation Links ── */}
           <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+            {/* Home Link */}
             <NavLink
               to="/"
               end
               className={({ isActive }) =>
-                `px-3.5 py-2 text-sm font-semibold tracking-wider uppercase transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
+                `relative px-3.5 py-2.5 text-sm font-semibold tracking-wider uppercase transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
                   isActive
                     ? 'text-amber font-bold'
                     : 'text-white/90 hover:text-amber hover:bg-white/5'
                 }`
               }
             >
-              Home
+              {({ isActive }) => (
+                <>
+                  <span>Home</span>
+                  {isActive && (
+                    <span className="absolute bottom-0 left-2 right-2 h-[2.5px] bg-amber rounded-full shadow-[0_0_10px_rgba(240,138,54,0.9)] animate-in fade-in zoom-in-95 duration-200" />
+                  )}
+                </>
+              )}
             </NavLink>
 
             {/* Services Dropdown */}
@@ -91,25 +99,35 @@ export default function Navbar() {
               <NavLink
                 to="/services"
                 className={({ isActive }) =>
-                  `px-3.5 py-2 text-sm font-semibold tracking-wider uppercase transition-colors rounded-md inline-flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
+                  `relative px-3.5 py-2.5 text-sm font-semibold tracking-wider uppercase transition-colors rounded-md inline-flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
                     isActive || location.pathname.startsWith('/services')
                       ? 'text-amber font-bold'
                       : 'text-white/90 hover:text-amber hover:bg-white/5'
                   }`
                 }
               >
-                <span>Services</span>
-                <ChevronDown
-                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                    servicesDropdownOpen ? 'rotate-180 text-amber' : 'text-white/60'
-                  }`}
-                />
+                {({ isActive }) => {
+                  const isServicesActive = isActive || location.pathname.startsWith('/services')
+                  return (
+                    <>
+                      <span>Services</span>
+                      <ChevronDown
+                        className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                          servicesDropdownOpen ? 'rotate-180 text-amber' : 'text-white/60'
+                        }`}
+                      />
+                      {isServicesActive && (
+                        <span className="absolute bottom-0 left-2 right-2 h-[2.5px] bg-amber rounded-full shadow-[0_0_10px_rgba(240,138,54,0.9)] animate-in fade-in zoom-in-95 duration-200" />
+                      )}
+                    </>
+                  )
+                }}
               </NavLink>
 
               {/* Dropdown Menu */}
               {servicesDropdownOpen && (
                 <div className="absolute top-full left-0 w-[580px] pt-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
-                  <div className="bg-[#0D1F30] border border-white/15 rounded-xl shadow-2xl p-4 backdrop-blur-xl">
+                  <div className="bg-[#0D1F30] border border-white/15 rounded-xl shadow-2xl p-4 backdrop-blur-xl bg-card-grid">
                     <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
                       <span className="text-xs font-bold uppercase tracking-widest text-[#FBBF24]">
                         All 9 Core Service Lines
@@ -152,56 +170,88 @@ export default function Navbar() {
               )}
             </div>
 
+            {/* Industries Link */}
             <NavLink
               to="/industries"
               className={({ isActive }) =>
-                `px-3.5 py-2 text-sm font-semibold tracking-wider uppercase transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
+                `relative px-3.5 py-2.5 text-sm font-semibold tracking-wider uppercase transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
                   isActive
                     ? 'text-amber font-bold'
                     : 'text-white/90 hover:text-amber hover:bg-white/5'
                 }`
               }
             >
-              Industries
+              {({ isActive }) => (
+                <>
+                  <span>Industries</span>
+                  {isActive && (
+                    <span className="absolute bottom-0 left-2 right-2 h-[2.5px] bg-amber rounded-full shadow-[0_0_10px_rgba(240,138,54,0.9)] animate-in fade-in zoom-in-95 duration-200" />
+                  )}
+                </>
+              )}
             </NavLink>
 
+            {/* About Link */}
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                `px-3.5 py-2 text-sm font-semibold tracking-wider uppercase transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
+                `relative px-3.5 py-2.5 text-sm font-semibold tracking-wider uppercase transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
                   isActive
                     ? 'text-amber font-bold'
                     : 'text-white/90 hover:text-amber hover:bg-white/5'
                 }`
               }
             >
-              About
+              {({ isActive }) => (
+                <>
+                  <span>About</span>
+                  {isActive && (
+                    <span className="absolute bottom-0 left-2 right-2 h-[2.5px] bg-amber rounded-full shadow-[0_0_10px_rgba(240,138,54,0.9)] animate-in fade-in zoom-in-95 duration-200" />
+                  )}
+                </>
+              )}
             </NavLink>
 
+            {/* Careers Link */}
             <NavLink
               to="/careers"
               className={({ isActive }) =>
-                `px-3.5 py-2 text-sm font-semibold tracking-wider uppercase transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
+                `relative px-3.5 py-2.5 text-sm font-semibold tracking-wider uppercase transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
                   isActive
                     ? 'text-amber font-bold'
                     : 'text-white/90 hover:text-amber hover:bg-white/5'
                 }`
               }
             >
-              Careers
+              {({ isActive }) => (
+                <>
+                  <span>Careers</span>
+                  {isActive && (
+                    <span className="absolute bottom-0 left-2 right-2 h-[2.5px] bg-amber rounded-full shadow-[0_0_10px_rgba(240,138,54,0.9)] animate-in fade-in zoom-in-95 duration-200" />
+                  )}
+                </>
+              )}
             </NavLink>
 
+            {/* Contact Link */}
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                `px-3.5 py-2 text-sm font-semibold tracking-wider uppercase transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
+                `relative px-3.5 py-2.5 text-sm font-semibold tracking-wider uppercase transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
                   isActive
                     ? 'text-amber font-bold'
                     : 'text-white/90 hover:text-amber hover:bg-white/5'
                 }`
               }
             >
-              Contact
+              {({ isActive }) => (
+                <>
+                  <span>Contact</span>
+                  {isActive && (
+                    <span className="absolute bottom-0 left-2 right-2 h-[2.5px] bg-amber rounded-full shadow-[0_0_10px_rgba(240,138,54,0.9)] animate-in fade-in zoom-in-95 duration-200" />
+                  )}
+                </>
+              )}
             </NavLink>
           </nav>
 
@@ -219,28 +269,27 @@ export default function Navbar() {
 
             <Link
               to="/contact?type=quote"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md bg-amber text-[#0D1F30] font-extrabold text-xs uppercase tracking-wider hover:bg-amber-hover hover:scale-[1.02] active:scale-[0.98] transition-all shadow-md shadow-amber/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-amber text-[#0D1F30] font-extrabold text-xs uppercase tracking-wider hover:bg-amber-hover hover:scale-[1.02] active:scale-[0.98] transition-all shadow-md shadow-amber/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
             >
               <span>Request a Quote</span>
               <ArrowRight className="w-3.5 h-3.5 text-[#0D1F30]" />
             </Link>
           </div>
 
-          {/* ── Mobile Hamburger Toggle ── */}
-          <div className="flex items-center gap-2 lg:hidden">
+          {/* ── Mobile Hamburger Button ── */}
+          <div className="flex lg:hidden items-center gap-3">
             <a
               href="tel:+12267592210"
-              className="p-2 rounded-lg bg-white/10 text-amber"
+              className="p-2 rounded-lg bg-amber text-[#0D1F30] font-bold"
               aria-label="Call TopKnotch"
             >
-              <Phone className="w-4 h-4" />
+              <Phone className="w-4 h-4 text-[#0D1F30]" />
             </a>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg bg-white/10 text-white hover:text-amber hover:bg-white/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
-              aria-label="Toggle navigation menu"
-              aria-expanded={mobileMenuOpen}
+              className="p-2 rounded-lg bg-white/10 text-white hover:bg-white/15 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -248,61 +297,40 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* ── Mobile Slide-down / Drawer ── */}
+      {/* ── Mobile Menu Drawer ── */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#0D1F30] border-b border-white/15 px-4 pt-4 pb-6 mt-3 shadow-2xl animate-in slide-in-from-top-2 duration-200">
-          <div className="flex flex-col gap-2">
+        <div className="lg:hidden fixed inset-x-0 top-[65px] bg-[#0D1F30] border-b border-white/15 shadow-2xl p-6 flex flex-col gap-5 max-h-[85vh] overflow-y-auto animate-in slide-in-from-top-4 duration-200">
+          <nav className="flex flex-col gap-2">
             <NavLink
               to="/"
               end
               className={({ isActive }) =>
-                `px-3 py-2.5 rounded-lg text-sm font-semibold tracking-wider uppercase ${
-                  isActive ? 'bg-amber text-[#0D1F30] font-bold' : 'text-white hover:bg-white/5'
+                `p-3 rounded-lg text-sm font-semibold uppercase tracking-wider flex items-center justify-between transition-colors ${
+                  isActive ? 'bg-amber/15 text-amber font-bold border-l-4 border-amber' : 'text-white/90 hover:bg-white/5'
                 }`
               }
             >
               Home
             </NavLink>
 
-            <div>
-              <button
-                onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-                className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-semibold tracking-wider uppercase text-white hover:bg-white/5"
-              >
-                <span>Services ({services.length})</span>
-                <ChevronDown
-                  className={`w-4 h-4 text-amber transition-transform duration-200 ${
-                    servicesDropdownOpen ? 'rotate-180' : ''
-                  }`}
-                />
-              </button>
-
-              {servicesDropdownOpen && (
-                <div className="pl-3 pr-1 py-2 flex flex-col gap-1 border-l-2 border-amber/30 ml-3 my-1">
-                  <Link
-                    to="/services"
-                    className="text-xs font-bold text-amber py-1.5 px-2 hover:bg-white/5 rounded"
-                  >
-                    → View All Services Overview
-                  </Link>
-                  {services.map((s) => (
-                    <Link
-                      key={s.id}
-                      to={`/services/${s.slug}`}
-                      className="text-xs text-white/80 hover:text-amber py-1.5 px-2 hover:bg-white/5 rounded transition-colors"
-                    >
-                      {s.name}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+            <NavLink
+              to="/services"
+              className={({ isActive }) =>
+                `p-3 rounded-lg text-sm font-semibold uppercase tracking-wider flex items-center justify-between transition-colors ${
+                  isActive || location.pathname.startsWith('/services')
+                    ? 'bg-amber/15 text-amber font-bold border-l-4 border-amber'
+                    : 'text-white/90 hover:bg-white/5'
+                }`
+              }
+            >
+              Services (All 9 Lines)
+            </NavLink>
 
             <NavLink
               to="/industries"
               className={({ isActive }) =>
-                `px-3 py-2.5 rounded-lg text-sm font-semibold tracking-wider uppercase ${
-                  isActive ? 'bg-amber text-[#0D1F30] font-bold' : 'text-white hover:bg-white/5'
+                `p-3 rounded-lg text-sm font-semibold uppercase tracking-wider flex items-center justify-between transition-colors ${
+                  isActive ? 'bg-amber/15 text-amber font-bold border-l-4 border-amber' : 'text-white/90 hover:bg-white/5'
                 }`
               }
             >
@@ -312,19 +340,19 @@ export default function Navbar() {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                `px-3 py-2.5 rounded-lg text-sm font-semibold tracking-wider uppercase ${
-                  isActive ? 'bg-amber text-[#0D1F30] font-bold' : 'text-white hover:bg-white/5'
+                `p-3 rounded-lg text-sm font-semibold uppercase tracking-wider flex items-center justify-between transition-colors ${
+                  isActive ? 'bg-amber/15 text-amber font-bold border-l-4 border-amber' : 'text-white/90 hover:bg-white/5'
                 }`
               }
             >
-              About
+              About Us
             </NavLink>
 
             <NavLink
               to="/careers"
               className={({ isActive }) =>
-                `px-3 py-2.5 rounded-lg text-sm font-semibold tracking-wider uppercase ${
-                  isActive ? 'bg-amber text-[#0D1F30] font-bold' : 'text-white hover:bg-white/5'
+                `p-3 rounded-lg text-sm font-semibold uppercase tracking-wider flex items-center justify-between transition-colors ${
+                  isActive ? 'bg-amber/15 text-amber font-bold border-l-4 border-amber' : 'text-white/90 hover:bg-white/5'
                 }`
               }
             >
@@ -334,29 +362,30 @@ export default function Navbar() {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                `px-3 py-2.5 rounded-lg text-sm font-semibold tracking-wider uppercase ${
-                  isActive ? 'bg-amber text-[#0D1F30] font-bold' : 'text-white hover:bg-white/5'
+                `p-3 rounded-lg text-sm font-semibold uppercase tracking-wider flex items-center justify-between transition-colors ${
+                  isActive ? 'bg-amber/15 text-amber font-bold border-l-4 border-amber' : 'text-white/90 hover:bg-white/5'
                 }`
               }
             >
               Contact
             </NavLink>
+          </nav>
 
-            <div className="pt-4 mt-2 border-t border-white/10 flex flex-col gap-3">
-              <Link
-                to="/contact?type=quote"
-                className="w-full text-center py-3 rounded-md bg-amber text-[#0D1F30] font-extrabold text-xs uppercase tracking-wider shadow-md shadow-amber/20"
-              >
-                Request a Quote
-              </Link>
-              <a
-                href="tel:+12267592210"
-                className="w-full flex items-center justify-center gap-2 py-2.5 rounded-md border border-white/20 text-white text-xs font-semibold"
-              >
-                <Phone className="w-3.5 h-3.5 text-amber" />
-                <span>Call (226) 759-2210</span>
-              </a>
-            </div>
+          <div className="pt-4 border-t border-white/10 flex flex-col gap-3">
+            <Link
+              to="/contact?type=quote"
+              className="w-full py-3.5 rounded-lg bg-amber text-[#0D1F30] font-extrabold text-xs uppercase tracking-wider text-center hover:bg-amber-hover transition-all"
+            >
+              Request a Free Quote
+            </Link>
+
+            <a
+              href="tel:+12267592210"
+              className="w-full py-3 rounded-lg border border-white/20 text-white font-semibold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2"
+            >
+              <Phone className="w-3.5 h-3.5 text-amber" />
+              <span>(226) 759-2210</span>
+            </a>
           </div>
         </div>
       )}

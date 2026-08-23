@@ -1,7 +1,9 @@
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router'
-import { Boxes, Factory, UtensilsCrossed, Sparkles, HardHat, Building2, Server, Car, ArrowRight, ShieldCheck } from 'lucide-react'
+import { Boxes, Factory, UtensilsCrossed, Sparkles, HardHat, Building2, Server, Car, ArrowRight } from 'lucide-react'
 import { industries } from '../data/industries'
 import CTASection from '../components/ui/CTASection'
+import { animateHeroEntrance, animateScrollReveal, ScrollTrigger } from '../utils/animations'
 
 const iconMap = {
   Boxes,
@@ -15,35 +17,53 @@ const iconMap = {
 }
 
 export default function Industries() {
+  const heroRef = useRef(null)
+  const gridRef = useRef(null)
+
+  useEffect(() => {
+    if (heroRef.current) {
+      animateHeroEntrance(heroRef.current.querySelectorAll('.hero-animate'))
+    }
+    if (gridRef.current) {
+      animateScrollReveal(gridRef.current, gridRef.current.querySelectorAll('.industry-card'))
+    }
+
+    return () => {
+      ScrollTrigger.getAll().forEach((t) => t.kill())
+    }
+  }, [])
+
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-technical-grid">
       {/* ── Hero (Starts at top:0 behind navbar) ── */}
-      <section className="pt-32 sm:pt-36 pb-16 sm:pb-20 bg-gradient-to-b from-[#0D1F30] via-[#11273C] to-[#1A3651] border-b border-white/10">
+      <section
+        ref={heroRef}
+        className="pt-32 sm:pt-36 pb-16 sm:pb-20 bg-gradient-to-b from-[#0D1F30] via-[#11273C]/90 to-[#0D1F30] border-b border-white/10 relative"
+      >
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center gap-4">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber/15 border border-amber/40 text-[#FBBF24] text-xs sm:text-sm font-extrabold uppercase tracking-widest">
-            <ShieldCheck className="w-4 h-4" />
-            <span>Mission-Critical Industrial Sectors</span>
+          <div className="hero-animate eyebrow-accent">
+            Mission-Critical Industrial Sectors
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black font-heading tracking-tight text-white">
-            Industries We Serve
+          <h1 className="hero-animate text-4xl sm:text-5xl md:text-6xl font-black font-heading tracking-tight text-white">
+            Industries <span className="text-amber">We Serve</span>
           </h1>
 
-          <p className="text-base sm:text-xl text-gray-light leading-relaxed max-w-3xl">
+          <p className="hero-animate text-base sm:text-xl text-gray-light leading-relaxed max-w-3xl">
             From high-velocity e-commerce distribution centres to hygienic food processing plants and heavy resource extraction — TopKnotch brings specialized trade expertise tailored to your industry standards.
           </p>
         </div>
       </section>
 
       {/* ── Industries Grid with Perfectly Aligned Cards ── */}
-      <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section ref={gridRef} className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
           {industries.map((ind) => {
             const IconComponent = iconMap[ind.icon] || Factory
             return (
               <div
                 key={ind.id}
-                className="bg-[#0D1F30] border border-white/10 hover:border-amber/50 rounded-2xl p-7 shadow-xl flex flex-col justify-between group transition-all"
+                className="industry-card bg-[#0D1F30] border border-white/10 hover:border-amber/50 rounded-2xl p-7 shadow-xl flex flex-col justify-between group transition-all bg-card-grid"
               >
                 {/* Upper Content wrapper */}
                 <div className="flex flex-col flex-1">
