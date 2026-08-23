@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router'
 import { Phone, ChevronDown, Menu, X, ArrowRight, Wrench, Cog, Flame, Anchor, Zap, ShieldCheck, AlertTriangle, ClipboardCheck, Calendar } from 'lucide-react'
-import logoFull from '../../assets/topknotch-full.png'
+import logoDark from '../../assets/Logos/Dark-logo-text.png'
 import { services } from '../../data/services'
 
 const iconMap = {
@@ -48,7 +48,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-[#1A3651]/95 backdrop-blur-md shadow-lg shadow-black/20 border-b border-white/10 py-3'
-          : 'bg-gradient-to-b from-[#0D1F30]/90 via-[#0D1F30]/50 to-transparent py-4 sm:py-5'
+          : 'bg-gradient-to-b from-[#0D1F30]/95 via-[#0D1F30]/60 to-transparent py-4 sm:py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,16 +56,14 @@ export default function Navbar() {
           {/* ── Brand Logo ── */}
           <Link
             to="/"
-            className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-amber rounded-lg"
+            className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-amber rounded-lg py-1"
             aria-label="TopKnotch Trade Services Home"
           >
-            <div className="bg-white rounded-xl p-2 sm:p-2.5 shadow-md group-hover:shadow-amber/20 transition-all">
-              <img
-                src={logoFull}
-                alt="TopKnotch Trade Services"
-                className="h-7 sm:h-9 w-auto object-contain"
-              />
-            </div>
+            <img
+              src={logoDark}
+              alt="TopKnotch Trade Services"
+              className="h-8 sm:h-10 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+            />
           </Link>
 
           {/* ── Desktop Navigation Links ── */}
@@ -74,7 +72,7 @@ export default function Navbar() {
               to="/"
               end
               className={({ isActive }) =>
-                `px-3 py-2 text-xs xl:text-sm font-semibold tracking-wider uppercase transition-colors rounded-md ${
+                `px-3 py-2 text-xs xl:text-sm font-semibold tracking-wider uppercase transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
                   isActive
                     ? 'text-amber font-bold'
                     : 'text-white/90 hover:text-amber hover:bg-white/5'
@@ -93,7 +91,7 @@ export default function Navbar() {
               <NavLink
                 to="/services"
                 className={({ isActive }) =>
-                  `px-3 py-2 text-xs xl:text-sm font-semibold tracking-wider uppercase transition-colors rounded-md inline-flex items-center gap-1.5 ${
+                  `px-3 py-2 text-xs xl:text-sm font-semibold tracking-wider uppercase transition-colors rounded-md inline-flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
                     isActive || location.pathname.startsWith('/services')
                       ? 'text-amber font-bold'
                       : 'text-white/90 hover:text-amber hover:bg-white/5'
@@ -118,7 +116,7 @@ export default function Navbar() {
                       </span>
                       <Link
                         to="/services"
-                        className="text-xs font-medium text-white/80 hover:text-amber inline-flex items-center gap-1 transition-colors"
+                        className="text-xs font-medium text-white/80 hover:text-amber inline-flex items-center gap-1 transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-amber"
                       >
                         <span>View Overview</span>
                         <ArrowRight className="w-3 h-3" />
@@ -132,7 +130,7 @@ export default function Navbar() {
                           <Link
                             key={service.id}
                             to={`/services/${service.slug}`}
-                            className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-white/5 border border-transparent hover:border-white/10 transition-all group"
+                            className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-white/5 border border-transparent hover:border-white/10 transition-all group focus:outline-none focus-visible:ring-1 focus-visible:ring-amber"
                           >
                             <div className="p-2 rounded-md bg-white/5 text-amber group-hover:bg-amber group-hover:text-navy transition-colors shrink-0 mt-0.5">
                               <IconComponent className="w-4 h-4" />
@@ -157,7 +155,7 @@ export default function Navbar() {
             <NavLink
               to="/industries"
               className={({ isActive }) =>
-                `px-3 py-2 text-xs xl:text-sm font-semibold tracking-wider uppercase transition-colors rounded-md ${
+                `px-3 py-2 text-xs xl:text-sm font-semibold tracking-wider uppercase transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
                   isActive
                     ? 'text-amber font-bold'
                     : 'text-white/90 hover:text-amber hover:bg-white/5'
@@ -170,7 +168,7 @@ export default function Navbar() {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                `px-3 py-2 text-xs xl:text-sm font-semibold tracking-wider uppercase transition-colors rounded-md ${
+                `px-3 py-2 text-xs xl:text-sm font-semibold tracking-wider uppercase transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
                   isActive
                     ? 'text-amber font-bold'
                     : 'text-white/90 hover:text-amber hover:bg-white/5'
@@ -183,7 +181,7 @@ export default function Navbar() {
             <NavLink
               to="/careers"
               className={({ isActive }) =>
-                `px-3 py-2 text-xs xl:text-sm font-semibold tracking-wider uppercase transition-colors rounded-md ${
+                `px-3 py-2 text-xs xl:text-sm font-semibold tracking-wider uppercase transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
                   isActive
                     ? 'text-amber font-bold'
                     : 'text-white/90 hover:text-amber hover:bg-white/5'
@@ -196,7 +194,7 @@ export default function Navbar() {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                `px-3 py-2 text-xs xl:text-sm font-semibold tracking-wider uppercase transition-colors rounded-md ${
+                `px-3 py-2 text-xs xl:text-sm font-semibold tracking-wider uppercase transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/50 ${
                   isActive
                     ? 'text-amber font-bold'
                     : 'text-white/90 hover:text-amber hover:bg-white/5'
@@ -211,7 +209,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-4">
             <a
               href="tel:+12267592210"
-              className="inline-flex items-center gap-2 text-xs font-semibold text-white/90 hover:text-amber transition-colors"
+              className="inline-flex items-center gap-2 text-xs font-semibold text-white/90 hover:text-amber transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
             >
               <div className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-amber">
                 <Phone className="w-3.5 h-3.5" />
@@ -221,10 +219,10 @@ export default function Navbar() {
 
             <Link
               to="/contact?type=quote"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md bg-amber text-navy font-bold text-xs uppercase tracking-wider hover:bg-amber-hover hover:scale-[1.02] active:scale-[0.98] transition-all shadow-md shadow-amber/20"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md bg-amber text-[#0D1F30] font-extrabold text-xs uppercase tracking-wider hover:bg-amber-hover hover:scale-[1.02] active:scale-[0.98] transition-all shadow-md shadow-amber/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
             >
               <span>Request a Quote</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#0D1F30]" />
             </Link>
           </div>
 
@@ -240,7 +238,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg bg-white/10 text-white hover:text-amber hover:bg-white/20 transition-colors focus:outline-none"
+              className="p-2 rounded-lg bg-white/10 text-white hover:text-amber hover:bg-white/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
             >
@@ -259,7 +257,7 @@ export default function Navbar() {
               end
               className={({ isActive }) =>
                 `px-3 py-2.5 rounded-lg text-sm font-semibold tracking-wider uppercase ${
-                  isActive ? 'bg-amber text-navy font-bold' : 'text-white hover:bg-white/5'
+                  isActive ? 'bg-amber text-[#0D1F30] font-bold' : 'text-white hover:bg-white/5'
                 }`
               }
             >
@@ -304,7 +302,7 @@ export default function Navbar() {
               to="/industries"
               className={({ isActive }) =>
                 `px-3 py-2.5 rounded-lg text-sm font-semibold tracking-wider uppercase ${
-                  isActive ? 'bg-amber text-navy font-bold' : 'text-white hover:bg-white/5'
+                  isActive ? 'bg-amber text-[#0D1F30] font-bold' : 'text-white hover:bg-white/5'
                 }`
               }
             >
@@ -315,7 +313,7 @@ export default function Navbar() {
               to="/about"
               className={({ isActive }) =>
                 `px-3 py-2.5 rounded-lg text-sm font-semibold tracking-wider uppercase ${
-                  isActive ? 'bg-amber text-navy font-bold' : 'text-white hover:bg-white/5'
+                  isActive ? 'bg-amber text-[#0D1F30] font-bold' : 'text-white hover:bg-white/5'
                 }`
               }
             >
@@ -326,7 +324,7 @@ export default function Navbar() {
               to="/careers"
               className={({ isActive }) =>
                 `px-3 py-2.5 rounded-lg text-sm font-semibold tracking-wider uppercase ${
-                  isActive ? 'bg-amber text-navy font-bold' : 'text-white hover:bg-white/5'
+                  isActive ? 'bg-amber text-[#0D1F30] font-bold' : 'text-white hover:bg-white/5'
                 }`
               }
             >
@@ -337,7 +335,7 @@ export default function Navbar() {
               to="/contact"
               className={({ isActive }) =>
                 `px-3 py-2.5 rounded-lg text-sm font-semibold tracking-wider uppercase ${
-                  isActive ? 'bg-amber text-navy font-bold' : 'text-white hover:bg-white/5'
+                  isActive ? 'bg-amber text-[#0D1F30] font-bold' : 'text-white hover:bg-white/5'
                 }`
               }
             >
@@ -347,7 +345,7 @@ export default function Navbar() {
             <div className="pt-4 mt-2 border-t border-white/10 flex flex-col gap-3">
               <Link
                 to="/contact?type=quote"
-                className="w-full text-center py-3 rounded-md bg-amber text-navy font-bold text-xs uppercase tracking-wider shadow-md shadow-amber/20"
+                className="w-full text-center py-3 rounded-md bg-amber text-[#0D1F30] font-extrabold text-xs uppercase tracking-wider shadow-md shadow-amber/20"
               >
                 Request a Quote
               </Link>

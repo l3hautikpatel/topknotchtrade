@@ -24,7 +24,7 @@ import {
   Users2,
   DollarSign
 } from 'lucide-react'
-import logoFull from '../assets/topknotch-full.png'
+import logoDark from '../assets/Logos/Dark-logo-text.png'
 import { services } from '../data/services'
 import { industries } from '../data/industries'
 import CTASection from '../components/ui/CTASection'
@@ -94,18 +94,18 @@ export default function Home() {
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-amber/15 blur-[140px] pointer-events-none rounded-full" />
 
         <div className="relative max-w-5xl mx-auto text-center flex flex-col items-center gap-6 sm:gap-8">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber/15 border border-amber/35 text-amber text-xs sm:text-sm font-bold uppercase tracking-widest">
-            <span className="w-2 h-2 rounded-full bg-amber animate-pulse" />
+          {/* Badge (WCAG 2.1 AA Compliant Contrast) */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber/15 border border-amber/40 text-[#FBBF24] text-xs sm:text-sm font-extrabold uppercase tracking-widest">
+            <span className="w-2 h-2 rounded-full bg-[#FBBF24] animate-pulse" />
             <span>Canada’s Industrial Trade Partner</span>
           </div>
 
           {/* Logo Hero Lockup */}
-          <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-2xl inline-block">
+          <div className="py-2 inline-block">
             <img
-              src={logoFull}
+              src={logoDark}
               alt="TopKnotch Trade Services logo"
-              className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+              className="h-12 sm:h-16 md:h-20 w-auto object-contain drop-shadow-xl"
             />
           </div>
 
@@ -119,19 +119,19 @@ export default function Home() {
             Certified millwright, mechanical installation, welding, rigging, and electrical trade services for warehouses, manufacturing plants, and distribution hubs across Canada.
           </p>
 
-          {/* Dual CTAs */}
+          {/* Dual CTAs (High Contrast #0D1F30 on Amber) */}
           <div className="flex flex-col sm:flex-row items-center gap-4 w-full justify-center pt-2">
             <Link
               to="/contact?type=quote"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-lg bg-amber text-navy font-bold text-sm uppercase tracking-wider hover:bg-amber-hover hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl shadow-amber/25"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-lg bg-amber text-[#0D1F30] font-extrabold text-sm uppercase tracking-wider hover:bg-amber-hover hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl shadow-amber/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
             >
               <span>Request a Quote</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 text-[#0D1F30]" />
             </Link>
 
             <Link
               to="/services"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-lg border-2 border-white/20 text-white font-bold text-sm uppercase tracking-wider hover:bg-white/10 hover:border-white/50 transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-lg border-2 border-white/25 text-white font-bold text-sm uppercase tracking-wider hover:bg-white/10 hover:border-white/50 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
             >
               <Wrench className="w-4 h-4 text-amber" />
               <span>Explore 9 Services</span>
@@ -156,41 +156,41 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 2. Full-Width Stats Bar (Safety Amber) ── */}
-      <section className="bg-amber text-navy py-8 px-4 sm:px-6 lg:px-8 border-y-2 border-amber-dark shadow-inner">
+      {/* ── 2. Full-Width Stats Bar (Safety Amber + Solid #0D1F30 for 6.5+:1 Contrast) ── */}
+      <section className="bg-amber text-[#0D1F30] py-8 px-4 sm:px-6 lg:px-8 border-y-2 border-amber-dark shadow-inner">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           <div className="flex flex-col items-center">
-            <span className="text-3xl sm:text-4xl md:text-5xl font-black font-heading tracking-tight">
+            <span className="text-3xl sm:text-4xl md:text-5xl font-black font-heading tracking-tight text-[#0D1F30]">
               9+
             </span>
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-wider mt-1 opacity-90">
+            <span className="text-xs sm:text-sm font-extrabold uppercase tracking-wider mt-1 text-[#0D1F30]">
               Core Trade Lines
             </span>
           </div>
 
           <div className="flex flex-col items-center">
-            <span className="text-3xl sm:text-4xl md:text-5xl font-black font-heading tracking-tight">
+            <span className="text-3xl sm:text-4xl md:text-5xl font-black font-heading tracking-tight text-[#0D1F30]">
               13
             </span>
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-wider mt-1 opacity-90">
+            <span className="text-xs sm:text-sm font-extrabold uppercase tracking-wider mt-1 text-[#0D1F30]">
               Provinces &amp; Territories
             </span>
           </div>
 
           <div className="flex flex-col items-center">
-            <span className="text-3xl sm:text-4xl md:text-5xl font-black font-heading tracking-tight">
+            <span className="text-3xl sm:text-4xl md:text-5xl font-black font-heading tracking-tight text-[#0D1F30]">
               100%
             </span>
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-wider mt-1 opacity-90">
+            <span className="text-xs sm:text-sm font-extrabold uppercase tracking-wider mt-1 text-[#0D1F30]">
               Certified Trades
             </span>
           </div>
 
           <div className="flex flex-col items-center">
-            <span className="text-3xl sm:text-4xl md:text-5xl font-black font-heading tracking-tight">
+            <span className="text-3xl sm:text-4xl md:text-5xl font-black font-heading tracking-tight text-[#0D1F30]">
               24/7
             </span>
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-wider mt-1 opacity-90">
+            <span className="text-xs sm:text-sm font-extrabold uppercase tracking-wider mt-1 text-[#0D1F30]">
               Emergency Response
             </span>
           </div>
@@ -205,7 +205,7 @@ export default function Home() {
               <AlertTriangle className="w-6 h-6 animate-pulse" />
             </div>
             <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-amber block">
+              <span className="text-xs font-extrabold uppercase tracking-widest text-[#FBBF24] block">
                 Urgent Production Stoppage?
               </span>
               <p className="text-sm sm:text-base font-bold text-white">
@@ -217,9 +217,9 @@ export default function Home() {
           <div className="flex items-center gap-3 shrink-0 w-full md:w-auto">
             <a
               href="tel:+12267592210"
-              className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-amber text-navy font-bold text-xs uppercase tracking-wider hover:bg-amber-hover transition-all shadow-md shadow-amber/20"
+              className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-amber text-[#0D1F30] font-extrabold text-xs uppercase tracking-wider hover:bg-amber-hover transition-all shadow-md shadow-amber/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
             >
-              <Phone className="w-4 h-4" />
+              <Phone className="w-4 h-4 text-[#0D1F30]" />
               <span>Call (226) 759-2210</span>
             </a>
           </div>
@@ -229,7 +229,7 @@ export default function Home() {
       {/* ── 4. Services Overview (All 9 Services) ── */}
       <section className="py-20 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center gap-3">
-          <div className="text-xs font-bold uppercase tracking-widest text-amber">
+          <div className="text-xs font-bold uppercase tracking-widest text-[#FBBF24]">
             Complete Industrial Lifecycle Support
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-heading text-white">
@@ -250,10 +250,11 @@ export default function Home() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">
-                    <div className="w-12 h-12 rounded-xl bg-white/5 group-hover:bg-amber text-amber group-hover:text-navy flex items-center justify-center transition-colors">
+                    <div className="w-12 h-12 rounded-xl bg-white/5 group-hover:bg-amber text-amber group-hover:text-[#0D1F30] flex items-center justify-center transition-colors">
                       <IconComponent className="w-6 h-6" />
                     </div>
-                    <span className="text-xs font-mono font-bold text-white/30 group-hover:text-amber transition-colors">
+                    {/* Accessible Counter: text-white/70 meets 4.5:1 on dark background */}
+                    <span className="text-xs font-mono font-bold text-white/70 group-hover:text-amber transition-colors">
                       0{index + 1}
                     </span>
                   </div>
@@ -262,7 +263,7 @@ export default function Home() {
                     {service.name}
                   </h3>
 
-                  <p className="text-xs text-amber font-medium mb-3">
+                  <p className="text-xs text-[#FBBF24] font-semibold mb-3">
                     {service.tagline}
                   </p>
 
@@ -283,7 +284,7 @@ export default function Home() {
                 <div className="flex items-center justify-between pt-2">
                   <Link
                     to={`/services/${service.slug}`}
-                    className="text-xs font-bold uppercase tracking-wider text-amber hover:text-white inline-flex items-center gap-1.5 transition-colors"
+                    className="text-xs font-bold uppercase tracking-wider text-amber hover:text-white inline-flex items-center gap-1.5 transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-amber"
                   >
                     <span>Learn More</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -291,7 +292,7 @@ export default function Home() {
 
                   <Link
                     to={`/contact?type=quote&service=${encodeURIComponent(service.name)}`}
-                    className="px-3 py-1.5 rounded bg-white/5 hover:bg-amber hover:text-navy text-[11px] font-bold text-white transition-all"
+                    className="px-3 py-1.5 rounded bg-white/10 hover:bg-amber hover:text-[#0D1F30] text-[11px] font-bold text-white transition-all focus:outline-none focus-visible:ring-1 focus-visible:ring-amber"
                   >
                     Quote
                   </Link>
@@ -304,7 +305,7 @@ export default function Home() {
         <div className="text-center mt-12">
           <Link
             to="/services"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg border border-white/20 hover:border-amber text-white hover:text-amber text-xs font-bold uppercase tracking-wider transition-all"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg border border-white/25 hover:border-amber text-white hover:text-amber text-xs font-bold uppercase tracking-wider transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
           >
             <span>View All 9 Services in Detail</span>
             <ArrowRight className="w-4 h-4" />
@@ -316,7 +317,7 @@ export default function Home() {
       <section className="py-20 bg-[#0D1F30] border-y border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center gap-3">
-            <div className="text-xs font-bold uppercase tracking-widest text-amber">
+            <div className="text-xs font-bold uppercase tracking-widest text-[#FBBF24]">
               The Contractor Advantage
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-heading text-white">
@@ -354,7 +355,7 @@ export default function Home() {
       {/* ── 6. Industries We Serve ── */}
       <section className="py-20 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center gap-3">
-          <div className="text-xs font-bold uppercase tracking-widest text-amber">
+          <div className="text-xs font-bold uppercase tracking-widest text-[#FBBF24]">
             Cross-Sector Experience
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-heading text-white">
@@ -377,16 +378,16 @@ export default function Home() {
                   <div className="w-10 h-10 rounded-lg bg-amber/10 text-amber flex items-center justify-center mb-3">
                     <IndIcon className="w-5 h-5" />
                   </div>
-                  <h3 className="text-base font-bold font-heading text-white mb-1.5">
+                  <h3 className="text-base font-bold font-heading text-white mb-1.5 min-h-[48px] flex items-start">
                     {ind.name}
                   </h3>
-                  <p className="text-xs text-gray leading-relaxed">
+                  <p className="text-xs text-gray-light leading-relaxed min-h-[52px]">
                     {ind.shortDesc}
                   </p>
                 </div>
                 <Link
                   to="/industries"
-                  className="text-[11px] font-bold text-amber hover:underline inline-flex items-center gap-1"
+                  className="text-[11px] font-bold text-amber hover:underline inline-flex items-center gap-1 focus:outline-none focus-visible:ring-1 focus-visible:ring-amber"
                 >
                   <span>Learn Sector Details</span>
                   <ArrowRight className="w-3 h-3" />

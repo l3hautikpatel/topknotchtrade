@@ -30,11 +30,11 @@ const openPositions = [
 
 export default function Careers() {
   return (
-    <div className="pt-24 sm:pt-28">
-      {/* ── Hero ── */}
-      <section className="py-14 sm:py-20 bg-gradient-to-b from-[#0D1F30] to-[#1A3651] border-b border-white/10">
+    <div className="flex flex-col">
+      {/* ── Hero (Starts at top:0 behind navbar) ── */}
+      <section className="pt-32 sm:pt-36 pb-16 sm:pb-20 bg-gradient-to-b from-[#0D1F30] via-[#11273C] to-[#1A3651] border-b border-white/10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center gap-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber/15 border border-amber/30 text-amber text-xs font-bold uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber/15 border border-amber/40 text-[#FBBF24] text-xs font-extrabold uppercase tracking-widest">
             <HardHat className="w-3.5 h-3.5" />
             <span>Join Canada’s Premier Trade Team</span>
           </div>
@@ -89,7 +89,7 @@ export default function Careers() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
             <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-amber block mb-1">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#FBBF24] block mb-1">
                 Opportunities
               </span>
               <h2 className="text-2xl sm:text-3xl font-heading font-bold text-white">
@@ -98,9 +98,9 @@ export default function Careers() {
             </div>
             <a
               href="mailto:career@topknotchtrade.com?subject=Trades%20Resume%20Submission"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-amber text-navy font-bold text-xs uppercase tracking-wider hover:bg-amber-hover transition-all"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-amber text-[#0D1F30] font-extrabold text-xs uppercase tracking-wider hover:bg-amber-hover transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
             >
-              <Mail className="w-3.5 h-3.5" />
+              <Mail className="w-3.5 h-3.5 text-[#0D1F30]" />
               <span>Email Your Resume</span>
             </a>
           </div>
@@ -113,7 +113,7 @@ export default function Careers() {
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-amber">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#FBBF24]">
                       {pos.type}
                     </span>
                     <span className="text-xs text-gray flex items-center gap-1">
@@ -132,7 +132,7 @@ export default function Careers() {
                 <div className="pt-4 border-t border-white/5 flex items-center justify-between">
                   <a
                     href={`mailto:career@topknotchtrade.com?subject=Application:%20${encodeURIComponent(pos.title)}`}
-                    className="text-xs font-bold uppercase tracking-wider text-amber hover:text-white inline-flex items-center gap-1.5 transition-colors"
+                    className="text-xs font-bold uppercase tracking-wider text-amber hover:text-white inline-flex items-center gap-1.5 transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-amber"
                   >
                     <span>Apply via Email</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -155,7 +155,7 @@ export default function Careers() {
         </p>
         <a
           href="mailto:career@topknotchtrade.com?subject=General%20Trades%20Application"
-          className="inline-flex items-center gap-2 text-base font-bold text-amber hover:underline"
+          className="inline-flex items-center gap-2 text-base font-bold text-amber hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
         >
           <Mail className="w-4 h-4" />
           <span>career@topknotchtrade.com</span>

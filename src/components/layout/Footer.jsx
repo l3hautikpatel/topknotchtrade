@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 import { Phone, Mail, MapPin, Clock, ShieldCheck, ArrowUpRight } from 'lucide-react'
-import logoFull from '../../assets/topknotch-full.png'
+import logoDark from '../../assets/Logos/Dark-logo-text.png'
 import { services } from '../../data/services'
 
 export default function Footer() {
@@ -13,14 +13,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
           {/* ── Column 1: Brand & Credentials (4 cols) ── */}
           <div className="lg:col-span-4 flex flex-col gap-5">
-            <Link to="/" className="inline-block" aria-label="TopKnotch Home">
-              <div className="bg-white rounded-xl p-3 inline-block shadow-md">
-                <img
-                  src={logoFull}
-                  alt="TopKnotch Trade Services"
-                  className="h-9 sm:h-10 w-auto object-contain"
-                />
-              </div>
+            <Link to="/" className="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-amber rounded-lg" aria-label="TopKnotch Home">
+              <img
+                src={logoDark}
+                alt="TopKnotch Trade Services"
+                className="h-10 sm:h-12 w-auto object-contain"
+              />
             </Link>
 
             <p className="text-sm text-gray leading-relaxed max-w-sm">

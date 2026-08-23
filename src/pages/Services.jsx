@@ -17,11 +17,11 @@ const iconMap = {
 
 export default function Services() {
   return (
-    <div className="pt-24 sm:pt-28">
-      {/* ── Page Hero ── */}
-      <section className="py-14 sm:py-20 bg-gradient-to-b from-[#0D1F30] to-[#1A3651] border-b border-white/10">
+    <div className="flex flex-col">
+      {/* ── Page Hero (Starts at top:0 behind navbar) ── */}
+      <section className="pt-32 sm:pt-36 pb-16 sm:pb-20 bg-gradient-to-b from-[#0D1F30] via-[#11273C] to-[#1A3651] border-b border-white/10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center gap-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber/15 border border-amber/30 text-amber text-xs font-bold uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber/15 border border-amber/40 text-[#FBBF24] text-xs font-extrabold uppercase tracking-widest">
             <span>9 Specialized Industrial Trade Lines</span>
           </div>
 
@@ -47,10 +47,11 @@ export default function Services() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-white/5 group-hover:bg-amber text-amber group-hover:text-navy flex items-center justify-center transition-colors">
+                    <div className="w-12 h-12 rounded-xl bg-white/5 group-hover:bg-amber text-amber group-hover:text-[#0D1F30] flex items-center justify-center transition-colors">
                       <IconComponent className="w-6 h-6" />
                     </div>
-                    <span className="text-xs font-mono font-bold text-white/40 group-hover:text-amber transition-colors">
+                    {/* WCAG compliant counter text */}
+                    <span className="text-xs font-mono font-bold text-white/70 group-hover:text-amber transition-colors">
                       0{index + 1}
                     </span>
                   </div>
@@ -59,7 +60,7 @@ export default function Services() {
                     {service.name}
                   </h2>
 
-                  <p className="text-xs text-amber font-medium mb-3">
+                  <p className="text-xs text-[#FBBF24] font-semibold mb-3">
                     {service.tagline}
                   </p>
 
@@ -68,7 +69,7 @@ export default function Services() {
                   </p>
 
                   <div className="border-t border-white/10 pt-4 mb-6">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-white/60 block mb-2">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-white/70 block mb-2">
                       Core Capabilities:
                     </span>
                     <ul className="flex flex-col gap-1.5 text-xs text-gray">
@@ -85,7 +86,7 @@ export default function Services() {
                 <div className="flex items-center justify-between pt-2">
                   <Link
                     to={`/services/${service.slug}`}
-                    className="text-xs font-bold uppercase tracking-wider text-amber hover:text-white inline-flex items-center gap-1.5 transition-colors"
+                    className="text-xs font-bold uppercase tracking-wider text-amber hover:text-white inline-flex items-center gap-1.5 transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-amber"
                   >
                     <span>Deep Dive Spec</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -93,7 +94,7 @@ export default function Services() {
 
                   <Link
                     to={`/contact?type=quote&service=${encodeURIComponent(service.name)}`}
-                    className="px-3 py-1.5 rounded bg-white/5 hover:bg-amber hover:text-navy text-[11px] font-bold text-white transition-all"
+                    className="px-3 py-1.5 rounded bg-white/10 hover:bg-amber hover:text-[#0D1F30] text-[11px] font-bold text-white transition-all focus:outline-none focus-visible:ring-1 focus-visible:ring-amber"
                   >
                     Quote
                   </Link>

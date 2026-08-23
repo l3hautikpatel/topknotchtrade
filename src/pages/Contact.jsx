@@ -4,11 +4,11 @@ import CTASection from '../components/ui/CTASection'
 
 export default function Contact() {
   return (
-    <div className="pt-24 sm:pt-28">
-      {/* ── Page Hero ── */}
-      <section className="py-12 sm:py-16 bg-gradient-to-b from-[#0D1F30] to-[#1A3651] border-b border-white/10">
+    <div className="flex flex-col">
+      {/* ── Page Hero (Starts at top:0 behind navbar) ── */}
+      <section className="pt-32 sm:pt-36 pb-16 sm:pb-20 bg-gradient-to-b from-[#0D1F30] via-[#11273C] to-[#1A3651] border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center gap-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber/15 border border-amber/30 text-amber text-xs font-bold uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber/15 border border-amber/40 text-[#FBBF24] text-xs font-extrabold uppercase tracking-widest">
             <Clock className="w-3.5 h-3.5" />
             <span>Fast Turnaround • 24/7 On-Call Support</span>
           </div>
@@ -32,7 +32,7 @@ export default function Contact() {
               <Phone className="w-5 h-5" />
             </div>
             <div>
-              <span className="text-xs text-amber font-bold uppercase tracking-wider block">Call Direct</span>
+              <span className="text-xs text-[#FBBF24] font-bold uppercase tracking-wider block">Call Direct</span>
               <a
                 href="tel:+12267592210"
                 className="text-sm sm:text-base font-bold text-white hover:text-amber transition-colors mt-0.5 block"
@@ -49,7 +49,7 @@ export default function Contact() {
               <Mail className="w-5 h-5" />
             </div>
             <div>
-              <span className="text-xs text-amber font-bold uppercase tracking-wider block">Project Quotes</span>
+              <span className="text-xs text-[#FBBF24] font-bold uppercase tracking-wider block">Project Quotes</span>
               <a
                 href="mailto:contact@topknotchtrade.com"
                 className="text-xs sm:text-sm font-bold text-white hover:text-amber transition-colors mt-0.5 block truncate"
@@ -66,7 +66,7 @@ export default function Contact() {
               <Clock className="w-5 h-5" />
             </div>
             <div>
-              <span className="text-xs text-amber font-bold uppercase tracking-wider block">Emergency Service</span>
+              <span className="text-xs text-[#FBBF24] font-bold uppercase tracking-wider block">Emergency Service</span>
               <a
                 href="mailto:service@topknotchtrade.com"
                 className="text-xs sm:text-sm font-bold text-white hover:text-amber transition-colors mt-0.5 block truncate"
@@ -83,7 +83,7 @@ export default function Contact() {
               <Users className="w-5 h-5" />
             </div>
             <div>
-              <span className="text-xs text-amber font-bold uppercase tracking-wider block">Trade Careers</span>
+              <span className="text-xs text-[#FBBF24] font-bold uppercase tracking-wider block">Trade Careers</span>
               <a
                 href="mailto:career@topknotchtrade.com"
                 className="text-xs sm:text-sm font-bold text-white hover:text-amber transition-colors mt-0.5 block truncate"
@@ -101,7 +101,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           {/* ── Left Column: Contact Form (7 cols) ── */}
           <div className="lg:col-span-7 flex flex-col gap-4">
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-amber">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#FBBF24]">
               <span>Send An Inquiry / Quote Request</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-heading font-bold text-white">
@@ -186,7 +186,7 @@ export default function Contact() {
 
             {/* Direct Head Office Card */}
             <div className="p-5 rounded-2xl bg-amber/10 border border-amber/30 text-xs text-gray-light flex flex-col gap-2">
-              <div className="flex items-center gap-2 text-amber font-bold uppercase tracking-wider text-xs">
+              <div className="flex items-center gap-2 text-[#FBBF24] font-bold uppercase tracking-wider text-xs">
                 <ShieldCheck className="w-4 h-4" />
                 <span>General Office Inquiries</span>
               </div>

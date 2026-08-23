@@ -3,11 +3,11 @@ import CTASection from '../components/ui/CTASection'
 
 export default function About() {
   return (
-    <div className="pt-24 sm:pt-28">
-      {/* ── Hero Banner ── */}
-      <section className="py-14 sm:py-20 bg-gradient-to-b from-[#0D1F30] to-[#1A3651] border-b border-white/10">
+    <div className="flex flex-col">
+      {/* ── Hero Banner (Starts at top:0 behind navbar) ── */}
+      <section className="pt-32 sm:pt-36 pb-16 sm:pb-20 bg-gradient-to-b from-[#0D1F30] via-[#11273C] to-[#1A3651] border-b border-white/10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center gap-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber/15 border border-amber/30 text-amber text-xs font-bold uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber/15 border border-amber/40 text-[#FBBF24] text-xs font-extrabold uppercase tracking-widest">
             <ShieldCheck className="w-3.5 h-3.5" />
             <span>Federally Incorporated Under CBCA</span>
           </div>
@@ -26,7 +26,7 @@ export default function About() {
       <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 flex flex-col gap-6">
-            <div className="text-xs font-bold uppercase tracking-widest text-amber">
+            <div className="text-xs font-bold uppercase tracking-widest text-[#FBBF24]">
               Who We Are
             </div>
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white leading-tight">
@@ -66,21 +66,21 @@ export default function About() {
 
               <div className="flex flex-col gap-4 text-xs text-gray-light">
                 <div>
-                  <span className="text-amber font-bold uppercase tracking-wider block text-[11px]">Corporate Status</span>
+                  <span className="text-[#FBBF24] font-bold uppercase tracking-wider block text-[11px]">Corporate Status</span>
                   <p className="text-white text-sm font-semibold mt-0.5">Federally Incorporated under the CBCA</p>
                 </div>
                 <div>
-                  <span className="text-amber font-bold uppercase tracking-wider block text-[11px]">Headquarters</span>
+                  <span className="text-[#FBBF24] font-bold uppercase tracking-wider block text-[11px]">Headquarters</span>
                   <p className="text-white text-sm font-semibold mt-0.5">Ontario, Canada (Serving Nationwide)</p>
                 </div>
                 <div>
-                  <span className="text-amber font-bold uppercase tracking-wider block text-[11px]">General Inquiries</span>
+                  <span className="text-[#FBBF24] font-bold uppercase tracking-wider block text-[11px]">General Inquiries</span>
                   <a href="mailto:info@topknotchtrade.com" className="text-white text-sm font-semibold hover:text-amber mt-0.5 block">
                     info@topknotchtrade.com
                   </a>
                 </div>
                 <div>
-                  <span className="text-amber font-bold uppercase tracking-wider block text-[11px]">Service Line Count</span>
+                  <span className="text-[#FBBF24] font-bold uppercase tracking-wider block text-[11px]">Service Line Count</span>
                   <p className="text-white text-sm font-semibold mt-0.5">9 Comprehensive Industrial Trade Lines</p>
                 </div>
               </div>
