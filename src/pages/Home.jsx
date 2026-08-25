@@ -30,6 +30,7 @@ import logoDark from '../assets/Logos/Dark-logo-text.png'
 import { services } from '../data/services'
 import { industries } from '../data/industries'
 import CTASection from '../components/ui/CTASection'
+import SEO from '../components/seo/SEO'
 import { animateHeroEntrance, animateScrollReveal, gsap, ScrollTrigger } from '../utils/animations'
 
 const serviceIconMap = {
@@ -159,6 +160,11 @@ export default function Home() {
 
   return (
     <div className="flex flex-col bg-technical-grid">
+      <SEO
+        title="Millwright & Industrial Contractors | TopKnotch Trade, Ontario"
+        description="Certified millwright, welding, rigging & electrical services for warehouses, plants & DCs across Ontario. 24/7 emergency response. Get a quote."
+      />
+
       {/* ── 1. Hero Section ── */}
       <section
         ref={heroRef}
@@ -185,13 +191,13 @@ export default function Home() {
           </div>
 
           {/* Headline with amber highlight */}
-          <h1 className="hero-animate text-4xl sm:text-6xl md:text-7xl font-black font-heading tracking-tight text-white leading-[1.08]">
-            Where Trades Meet <span className="text-amber">Excellence.</span>
+          <h1 className="hero-animate text-4xl sm:text-5xl md:text-6xl font-black font-heading tracking-tight text-white leading-[1.08]">
+            Certified Millwright &amp; Industrial Contractors in <span className="text-amber">Ontario, Canada.</span>
           </h1>
 
           {/* Subheadline */}
           <p className="hero-animate text-base sm:text-xl md:text-2xl text-gray-light leading-relaxed max-w-3xl font-normal">
-            Certified millwright, mechanical installation, welding, rigging, and electrical trade services for warehouses, manufacturing plants, and distribution hubs across Canada.
+            Delivering trusted millwright, mechanical installation, welding, rigging, and electrical trade services for warehouses, manufacturing plants, and distribution hubs.
           </p>
 
           {/* Dual CTAs */}

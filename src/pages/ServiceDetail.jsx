@@ -3,6 +3,7 @@ import { useParams, Link, Navigate } from 'react-router'
 import { CheckCircle2, ArrowRight, Phone, ShieldCheck, Wrench, Cog, Flame, Anchor, Zap, AlertTriangle, ClipboardCheck, Calendar } from 'lucide-react'
 import { services } from '../data/services'
 import CTASection from '../components/ui/CTASection'
+import SEO from '../components/seo/SEO'
 import { animateHeroEntrance, animateScrollReveal, ScrollTrigger } from '../utils/animations'
 
 const iconMap = {
@@ -46,6 +47,11 @@ export default function ServiceDetail() {
 
   return (
     <div className="flex flex-col bg-technical-grid">
+      <SEO
+        title={`${service.name} | TopKnotch Trade Services`}
+        description={service.description}
+      />
+
       {/* ── Breadcrumb & Hero (Starts at top:0 behind navbar) ── */}
       <section
         ref={heroRef}

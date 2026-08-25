@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import { Boxes, Factory, UtensilsCrossed, Sparkles, HardHat, Building2, Server, Car, ArrowRight } from 'lucide-react'
 import { industries } from '../data/industries'
 import CTASection from '../components/ui/CTASection'
+import SEO from '../components/seo/SEO'
 import { animateHeroEntrance, animateScrollReveal, ScrollTrigger } from '../utils/animations'
 
 const iconMap = {
@@ -35,6 +36,11 @@ export default function Industries() {
 
   return (
     <div className="flex flex-col bg-technical-grid">
+      <SEO
+        title="Industries Served | TopKnotch Trade Services"
+        description="Specialized millwright and mechanical services for warehouses, distribution centres, manufacturing, and food processing plants across Ontario."
+      />
+
       {/* ── Hero (Starts at top:0 behind navbar) ── */}
       <section
         ref={heroRef}
