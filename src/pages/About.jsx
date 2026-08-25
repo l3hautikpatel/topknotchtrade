@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { ShieldCheck, Target, Eye, Award, CheckCircle2, Users } from 'lucide-react'
 import CTASection from '../components/ui/CTASection'
+import SEO from '../components/seo/SEO'
 import { animateHeroEntrance, animateScrollReveal, ScrollTrigger } from '../utils/animations'
 
 export default function About() {
@@ -26,6 +27,11 @@ export default function About() {
 
   return (
     <div className="flex flex-col bg-technical-grid">
+      <SEO
+        title="About TopKnotch Trade Services | Ontario"
+        description="Founding story, mission, and safety commitment of TopKnotch Trade Services. Federally incorporated skilled trades contractor."
+      />
+
       {/* ── Hero Banner (Starts at top:0 behind navbar) ── */}
       <section
         ref={heroRef}

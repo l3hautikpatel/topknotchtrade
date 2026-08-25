@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { Phone, Mail, MapPin, Clock, ShieldCheck, CheckCircle2, Award, Users } from 'lucide-react'
 import ContactForm from '../components/forms/ContactForm'
 import CTASection from '../components/ui/CTASection'
+import SEO from '../components/seo/SEO'
 import { animateHeroEntrance, animateScrollReveal, ScrollTrigger } from '../utils/animations'
 
 export default function Contact() {
@@ -27,6 +28,11 @@ export default function Contact() {
 
   return (
     <div className="flex flex-col bg-technical-grid">
+      <SEO
+        title="Contact TopKnotch Trade Services | Get a Quote"
+        description="Get a quote for certified millwright, mechanical, welding, and electrical services in Ontario. 24/7 emergency response."
+      />
+
       {/* ── Page Hero (Starts at top:0 behind navbar) ── */}
       <section
         ref={heroRef}

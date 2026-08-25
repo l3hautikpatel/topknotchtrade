@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { ShieldCheck, Award, Mail, ArrowRight, DollarSign, MapPin } from 'lucide-react'
 import CTASection from '../components/ui/CTASection'
+import SEO from '../components/seo/SEO'
 import { animateHeroEntrance, animateScrollReveal, ScrollTrigger } from '../utils/animations'
 
 const openPositions = [
@@ -53,6 +54,11 @@ export default function Careers() {
 
   return (
     <div className="flex flex-col bg-technical-grid">
+      <SEO
+        title="Careers | Millwright & Skilled Trade Jobs in Ontario"
+        description="Join TopKnotch Trade Services. We are hiring certified millwrights, welders, and industrial electricians across Ontario. View open positions."
+      />
+
       {/* ── Hero (Starts at top:0 behind navbar) ── */}
       <section
         ref={heroRef}

@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import { ArrowRight, Wrench, Cog, Flame, Anchor, Zap, ShieldCheck, AlertTriangle, ClipboardCheck, Calendar } from 'lucide-react'
 import { services } from '../data/services'
 import CTASection from '../components/ui/CTASection'
+import SEO from '../components/seo/SEO'
 import { animateHeroEntrance, animateScrollReveal, ScrollTrigger } from '../utils/animations'
 
 const iconMap = {
@@ -36,6 +37,11 @@ export default function Services() {
 
   return (
     <div className="flex flex-col bg-technical-grid">
+      <SEO
+        title="Industrial Trade Services | Millwright, Welding & Electrical"
+        description="Explore TopKnotch Trade's full suite of industrial services: millwrighting, mechanical installation, welding, rigging, and breakdown response."
+      />
+
       {/* ── Page Hero (Starts at top:0 behind navbar) ── */}
       <section
         ref={heroRef}
